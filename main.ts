@@ -91,18 +91,6 @@ namespace kitronik_servo_lite {
         stop();
     }
 
-    /**
-     * Drives backwards the requested distance and then stops
-     * @param howFar distance to move
-     */
-    //% blockId=kitronik_servolite_drive_backwards
-    //% block="drive backwards %howFar|distance" 
-    export function driveBackwards(howFar: number): void {
-        let timeToWait = (howFar * microSecInASecond) / distancePerSec; // calculation done this way round to avoid zero rounding
-        backward();
-        control.waitMicros(timeToWait);
-        stop();
-    }
 
     /**
      * Turns right through the requested degrees and then stops
